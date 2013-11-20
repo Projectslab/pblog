@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize, only: [:new, :create]
+
   def new
     redirect_to profile_path unless User.count.zero?
     @user = User.new
