@@ -1,0 +1,10 @@
+= form_for @post, html: { multipart: true } do |f|
+  = render partial: 'shared/errors', locals: { obj: @post }
+  = f.label :title, 'Title'
+  = f.text_field :title
+  = f.label :subject, 'Subject'
+  = f.text_area :subject
+  
+  .field
+    = f.submit class: 'btn btn-primary btn-standart'
+    = link_to 'Back', :back, class: 'btn btn-info btn-standart'

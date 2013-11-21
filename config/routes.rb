@@ -1,5 +1,8 @@
 Pblog::Application.routes.draw do
   
+  # posts
+  resources :posts
+
   # sessions
   controller :sessions do
     get 'login' => :new
@@ -15,5 +18,5 @@ Pblog::Application.routes.draw do
     get 'super_delete' => :super_delete
   end
 
-  root 'users#new'
+  root 'posts#index'
 end

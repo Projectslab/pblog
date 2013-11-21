@@ -1,10 +1,10 @@
 .row
-  div class="span6 offset3"
-    h1 Profile
+  h1 Profile
 
-    .field
-      = "Name: #{@user.name}"
-    .field
-      = "Email: #{@user.email}"
+  .field
+    = "Name: #{@user.name}"
+  .field
+    = "Email: #{@user.email}"
 
-    = link_to "Sign out", logout_path, method: "delete"
+  = link_to "New post", new_post_path, class: 'btn btn-warning btn-standart'
+  = link_to "Sign out", logout_path, method: "delete", class: 'btn btn-primary btn-standart'

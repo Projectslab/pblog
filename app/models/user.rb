@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :posts
+
   private
   def only_one_user
     errors[:base] << "You can't register more then one user!" unless User.count.zero?
