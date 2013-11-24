@@ -1,10 +1,6 @@
 .row
   h1 Profile
 
-  .field
-    = "Name: #{@user.name}"
-  .field
-    = "Email: #{@user.email}"
+  = link_to "New post", new_post_path, class: 'btn btn-info btn-standart'
 
-  = link_to "New post", new_post_path, class: 'btn btn-warning btn-standart'
-  = link_to "Sign out", logout_path, method: "delete", class: 'btn btn-primary btn-standart'
+  = render partial: 'posts/post_in_profile', collection: @posts, as: :post

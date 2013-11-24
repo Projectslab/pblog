@@ -1,6 +1,6 @@
 h2 = @post.title
 
-p = "Subject: #{@post.subject}"
+p 
+  = simple_format(@post.subject)
 p = "Date: #{@post.date}"
-
-= link_to "Edit", edit_post_path(@post), class: 'btn btn-warning btn-standart'
+p = "Author: #{@post.author}"

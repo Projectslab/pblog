@@ -1,0 +1,5 @@
+h2 = post.title
+p = simple_format(post.subject)
+
+= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-standart'
+= link_to 'Delete', post_path(post), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger btn-standart'

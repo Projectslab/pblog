@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.first
+    @posts = @user.posts
   end
 
   def super_delete

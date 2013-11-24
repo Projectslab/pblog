@@ -10,4 +10,5 @@ html
     div class="container"
       - flash.each do |key, value|
         = content_tag(:div, value, class: "alert alert-#{key}")
+      = render 'layouts/header' 
       = yield
