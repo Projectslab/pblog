@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     if @post.save
       flash[:success] = 'Post save success!'
-      redirect_to posts_path
+      redirect_to root_path
     else
       render :new
     end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = 'Post destroyed!'
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private
