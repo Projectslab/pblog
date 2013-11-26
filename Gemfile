@@ -26,6 +26,7 @@ end
 gem "bcrypt-ruby", "~> 3.1.2"
 gem "slim", "~> 2.0.2"
 gem 'bootstrap-sass', '2.3.2.0'
+gem "kaminari", "~> 0.15.0"
 
 # Use unicorn as the app server
 # gem 'unicorn'

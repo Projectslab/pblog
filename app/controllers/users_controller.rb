@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.first
-    @posts = @user.posts
+    @posts = @user.posts.page(params[:page]).per(5)
   end
 
   def super_delete
