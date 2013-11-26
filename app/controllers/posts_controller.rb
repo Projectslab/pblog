@@ -7,15 +7,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new    
   end
 
   def create
     @post = current_user.posts.new(post_params)
-    if @post.save
-      flash[:success] = 'Post save success!'
-      redirect_to root_path
-    else
+    unless @post.save
       render :new
     end
   end

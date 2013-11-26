@@ -1,4 +1,4 @@
-= form_for @post, html: { multipart: true } do |f|
+= form_for @post, html: { multipart: true }, remote: true do |f|
   = render partial: 'shared/errors', locals: { obj: @post }
   = f.label :title, 'Title'
   = f.text_field :title

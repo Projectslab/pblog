@@ -1,10 +1,11 @@
 .row
   h1 Profile
 
-  = link_to "New post", new_post_path, class: 'btn btn-info btn-standart'
+  #new-post
+    = render "posts/new_post"
 
-  = paginate @posts
-  = render partial: 'posts/post_in_profile', collection: @posts, as: :post
+  #posts-list
+    = render partial: 'posts/post_in_profile', collection: @posts, as: :post
 
   hr
-  = link_to 'Delete user!', super_delete_path, confirm: 'Are you sure?', class: 'btn btn-danger btn-standart'
+  = link_to 'Delete user!', super_delete_path, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-standart'
