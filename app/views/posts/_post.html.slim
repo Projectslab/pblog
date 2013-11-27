@@ -1,4 +1,6 @@
 h2 = post.title
 p = simple_format(post.subject)
+- if post.photo.exists?
+  = image_tag post.photo.url(:thumb)
 p = post.date
 p = post.author

@@ -12,7 +12,10 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    unless @post.save
+    if @post.save
+      flash[:success] = 'Post save success!'
+      redirect_to root_path
+    else
       render :new
     end
   end
@@ -40,7 +43,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :subject, :date)
+      params.require(:post).permit(:title, :subject, :date, :photo)
     end
 
     def find_post
